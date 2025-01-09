@@ -1,0 +1,6 @@
+services:
+  development:
+    image: wildsdocker/development:v1
+    volumes:
+      - ./app/:/app
+    tty: true
