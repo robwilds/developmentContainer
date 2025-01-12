@@ -4,3 +4,5 @@ services:
     volumes:
       - ./app/:/app
     tty: true
+    ports:
+      - 4200:4200
