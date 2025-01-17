@@ -1,1 +1,2 @@
 docker buildx build --load --platform=linux/amd64,linux/arm64 -t wildsdocker/development:v1 .
+docker push wildsdocker/development:v1
