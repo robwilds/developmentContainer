@@ -1,6 +1,6 @@
 services:
   development:
-    image: wildsdocker/development:v1
+    image: wildsdocker/development:latest
     volumes:
       - ./app/:/app
       #- /Users/robert.wilds/downloads/git:/app
