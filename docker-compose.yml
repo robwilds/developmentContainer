@@ -1,11 +1,11 @@
 services:
   development:
-    image: wildsdocker/development
+    image: wildsdocker/development:latest
     volumes:
       - ./app/:/app
       #- /Users/robert.wilds/downloads/git:/app
     tty: true
-    ports:
-      - 4200:4200
-      - 443:443
-      - 80:80
+    #ports:
+    #- 4200:4200
+    #- 443:443
+    #- 80:80

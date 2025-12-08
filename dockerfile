@@ -25,4 +25,5 @@ RUN node -v
 RUN npm -v
 
 WORKDIR /usr/app
-RUN npm install -g -y @angular/cli@17 yo@4.3.1 generator-alfresco-adf-app@latest
+RUN npm install -g -y @angular/cli@17 yo@4.3.1 generator-alfresco-adf-app@latest 
+RUN touch /root/.config
