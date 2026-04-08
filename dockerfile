@@ -33,4 +33,4 @@ ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 WORKDIR /usr/app
 
-RUN ln -sf /bin/bash /bin/sh
+RUN chown -R 1000:0 "/root/.npm"
