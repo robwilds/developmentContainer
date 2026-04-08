@@ -15,4 +15,6 @@ Or use the included docker compose file to "up" it
 
 you can use the /app directory to create and manage your apps but feel free to change this directory and mapping to whatever you want
 
+When using you to scaffold a default Alfresco angular ADF app, set the proxy-conf.js file to use host.docker.internal instead of localhost to access your Alfresco install that's running in a docker container locally; otherwise, set the url to the appropriate external address
+
 enjoy!
