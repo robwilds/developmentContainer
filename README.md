@@ -1,6 +1,6 @@
 # Introduction
 
-This contains a docker compose to build a debian base container and install node 18, npm 9, java 17, angular 17, python and yo 4.3.1
+This contains a docker compose to build a debian base container and install node 24, npm 11, java 17, angular 21, python 3.14 and yo 7.0.0 (with alfresco adf generator)
 
 It's suited for alfresco development but can be used for anything really
 
