@@ -1,8 +1,8 @@
 services:
   development:
-    image: wildsdocker/development:latest
+    image: wildsdocker/development:v3
     volumes:
-      - ./app/:/app
+      - ./app/:/usr/app
       #- /Users/robert.wilds/downloads/git:/app
     tty: true
     #ports:
