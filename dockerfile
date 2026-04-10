@@ -28,8 +28,8 @@ RUN . $NVM_DIR/nvm.sh \
     && npm install -g -y @angular/cli yo@$YO_VERSION generator-alfresco-adf-app@latest
 
 # Set up environment variables for Node.js
-ENV NODE_PATH=$NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
+#ENV NODE_PATH=$NVM_DIR/versions/node/v$NODE_VERSION/lib/node_modules
+#ENV PATH=$NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 
 WORKDIR /usr/app
 

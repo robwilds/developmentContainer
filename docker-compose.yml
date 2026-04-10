@@ -2,6 +2,7 @@ services:
   development:
     image: wildsdocker/development:v3
     volumes:
+      - nodehive:/usr/local/nvm #this is to maintain nvm versions between restarts
       - ./app/:/usr/app
       #- /Users/robert.wilds/downloads/git:/app
     tty: true
@@ -9,3 +10,5 @@ services:
       - 4200:4200
     #- 443:443
     #- 80:80
+volumes:
+  nodehive:
