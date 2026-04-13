@@ -1,3 +1,4 @@
+name: devgroup
 services:
   development:
     container_name: dev
