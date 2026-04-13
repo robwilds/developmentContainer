@@ -1,5 +1,6 @@
 services:
   development:
+    container_name: dev
     image: wildsdocker/development:v3
     volumes:
       - nodehive:/usr/local/nvm #this is to maintain nvm versions between restarts
