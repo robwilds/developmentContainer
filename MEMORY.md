@@ -29,6 +29,9 @@ Development container (Ubuntu 26.04) with Node 24, Java 17, Python 3.14, Angular
 - **`.gitignore`**: Added `dashboard/node_modules/`.
 - **`MEMORY.md`**: Created for session context.
 
+### Session 3 Changes
+- **`start.sh` npm install**: Added `npm install --cache /tmp/npm-cache` before `node server.js` to prevent crash on fresh systems where `node_modules/` is missing. Previously `require('express')` at line 1 of `server.js` would fail before `ensureDeps()` ever ran.
+
 ### Known Issues / Notes
 - `npm cache` had root-owned files — workaround: `--cache /tmp/npm-cache`
 - Container named `dev` (from docker-compose.yml `container_name: dev`)
