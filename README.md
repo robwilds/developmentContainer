@@ -8,7 +8,12 @@ You can also pull this container directly from docker: docker pull wildsdocker/d
 
 # Running and accessing
 
-To access container via cli, run:
+To start the container and dashboard together, run:
+./start.sh
+
+This runs `docker compose up -d` and starts the Express + Socket.IO dashboard on port 3000.
+
+To access container via cli only, run:
 docker run -it -v $(pwd)/app:/app wildsdocker/development:v3 bash
 
 Or use the included docker compose file to "up" it

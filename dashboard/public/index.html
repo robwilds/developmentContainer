@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Container Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>&#x1F433; <span>Dev</span> Container Manager</h1>
+  <div class="status-badge">
+    <span class="status-dot not_found" id="status-dot"></span>
+    <span id="status-text">Checking...</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="controls">
+    <button class="btn btn-start" id="btn-start">&#9654; Start</button>
+    <button class="btn btn-stop" id="btn-stop" disabled>&#9632; Stop</button>
+    <button class="btn btn-restart" id="btn-restart" disabled>&#8635; Restart</button>
+  </div>
+
+  <div class="quick-actions">
+    <h3>Quick Actions</h3>
+    <div class="quick-btns">
+      <button class="quick-btn" data-cmd="nvm --version">nvm --version</button>
+      <button class="quick-btn" data-cmd="node -v">node -v</button>
+      <button class="quick-btn" data-cmd="npm -v">npm -v</button>
+      <button class="quick-btn" data-cmd="java -version">java -version</button>
+      <button class="quick-btn" data-cmd="python3 --version">python3 --version</button>
+      <button class="quick-btn" data-cmd="mvn --version 2>&1 | head -5">mvn --version</button>
+      <button class="quick-btn" data-cmd="ng version">ng version</button>
+      <button class="quick-btn" data-cmd="yo --version">yo --version</button>
+      <button class="quick-btn" data-cmd="nvm ls">nvm ls</button>
+      <button class="quick-btn" data-cmd="whoami && pwd">whoami / pwd</button>
+    </div>
+  </div>
+
+  <div class="section volumes-section" id="volumes-section">
+    <div class="section-header">
+      <h3>Volume Mounts</h3>
+      <button class="btn btn-add-volume" id="btn-add-volume">+ Add Volume</button>
+    </div>
+    <div class="volume-list" id="volume-list">
+      <div class="volume-empty">No volumes configured.</div>
+    </div>
+  </div>
+
+  <div class="terminal-wrapper">
+    <div class="terminal-header">
+      <span class="terminal-dot red"></span>
+      <span class="terminal-dot yellow"></span>
+      <span class="terminal-dot green"></span>
+      <span style="margin-left:8px;">Terminal &mdash; commands run inside the <strong>dev</strong> container</span>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div class="line system">// Type a command below or click a Quick Action to begin.</div>
+      <button class="scroll-bottom-btn" id="scroll-bottom-btn" title="Scroll to bottom">&#x2193;</button>
+    </div>
+    <div class="terminal-footer">
+      <span class="prompt">$</span>
+      <input type="text" id="cmd-input" placeholder="Enter command..." autofocus spellcheck="false" autocomplete="off">
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="volume-modal">
+    <div class="modal-header">
+      <h3>Mount a Directory</h3>
+      <button class="modal-close" id="modal-close">&times;</button>
+    </div>
+
+    <div class="modal-body" id="modal-body-form">
+      <label class="field-label">Host directory</label>
+      <div class="path-row">
+        <input type="text" id="host-path" placeholder="/Users/name/projects" value="">
+        <button class="btn btn-browse" id="btn-browse">Browse</button>
+      </div>
+
+      <label class="field-label">Container mount path</label>
+      <input type="text" id="container-path" placeholder="/projects" value="">
+
+      <div class="modal-actions">
+        <button class="btn" id="btn-cancel-volume">Cancel</button>
+        <button class="btn btn-primary" id="btn-mount">Mount &amp; Restart</button>
+      </div>
+    </div>
+
+    <div class="modal-body" id="modal-body-browser" style="display:none;">
+      <div class="browser-current" id="browser-current">/</div>
+      <div class="browser-list" id="browser-list"></div>
+      <div class="modal-actions">
+        <button class="btn" id="btn-browser-back">Back</button>
+        <button class="btn btn-primary" id="btn-select-dir">Select This Directory</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
